@@ -56,7 +56,11 @@ public class HamsterController {
 	}
 
 	// TODO replace this comment with JavaDoc, including Pre and Post Conditions.
-	void helper0() {
+
+	/**
+	 * Lets the hamster do a left half circle
+	 */
+	void hamsterHalfCircle() {
 		controlledHamster.write("Executing helper0:");
 		controlledHamster.turnLeft();
 		controlledHamster.move();
@@ -65,7 +69,11 @@ public class HamsterController {
 	}
 
 	// TODO replace this comment with JavaDoc, including Pre and Post Conditions.
-	void helper1() {
+
+	/**
+	 * Lets the hamster pick up all grains and move forward while clear
+	 */
+	void hamsterMoveAndPick() {
 		controlledHamster.write("Executing helper1:");
 		while (controlledHamster.frontIsClear()) {
 			pickAllGrains();
@@ -75,7 +83,12 @@ public class HamsterController {
 	}
 
 	// TODO replace this comment with JavaDoc, including Pre and Post Conditions.
-	void helper2(Integer turns) {
+
+	/**
+	 * Turns the hamster left turns times
+	 * @param turns Integer count of turns the hamster should make
+	 */
+	void hamsterTurn(Integer turns) {
 		controlledHamster.write("Executing helper2:");
 		for (Integer i = 0; i < turns; i++) {
 			controlledHamster.turnLeft();
@@ -84,7 +97,12 @@ public class HamsterController {
 	}
 
 	// TODO replace this comment with JavaDoc, including Pre and Post Conditions.
-	void helper3(Integer steps) {
+
+	/**
+	 * Moves the hamster either steps times or until the wall is reached
+	 * @param steps Integer count of steps the hamster should make
+	 */
+	void hamsterMoveSteps(Integer steps) {
 		controlledHamster.write("Executing helper3:");
 		Integer counter = 0;
 		for (; counter < steps && controlledHamster.frontIsClear(); counter++) {
